@@ -28,12 +28,8 @@ public class Exercise001 {
 
     public int countLinuxUsers(List<User> users) {
 
-        int count =0;
-        for (User user : users){
-            if(user.getType().equals("Linux")){
-                count++;
-            }
-        }
-        return count;
+        long linuxUser =users.stream().filter(user -> user.getType().equals("Linux")).count();
+
+        return (int)linuxUser;
     }
 }
